@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AmazonClone</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_on_amazon_eg">Search on Amazon.eg</string>
+    <string name="choose_location">Choose Location</string>
+</resources>
