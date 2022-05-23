@@ -1,12 +1,13 @@
-package com.example.amazonclone
+package com.example.amazonclone.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.core.content.ContextCompat
+import com.example.amazonclone.R
 import com.example.amazonclone.databinding.ActivityMainBinding
-import com.example.amazonclone.ui.HomeFragment
 import com.example.amazonclone.ui.adapters.ViewPagerAdapter
+import com.example.amazonclone.ui.home.HomeFragment
 import com.example.amazonclone.utils.setStatusBarColor
 import com.google.android.material.tabs.TabLayoutMediator
 
