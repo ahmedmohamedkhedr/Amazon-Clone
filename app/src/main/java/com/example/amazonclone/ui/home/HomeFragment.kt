@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.amazonclone.databinding.FragmentHomeBinding
 import com.example.amazonclone.ui.adapters.HomeFragmentRecyclerAdapter
+import com.example.domain.models.base.BaseEntity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
@@ -37,10 +38,10 @@ class HomeFragment : Fragment() {
 
     private fun bindView() {
         viewModel._categoriesLiveData.observe(viewLifecycleOwner) {
-
+           adapter.addEntities(it as MutableList<BaseEntity>)
         }
         viewModel._bestOffersLiveData.observe(viewLifecycleOwner) {
-
+           adapter.addEntities(it as MutableList<BaseEntity>)
         }
         viewModel._buyMoreLiveDate.observe(viewLifecycleOwner) {
 

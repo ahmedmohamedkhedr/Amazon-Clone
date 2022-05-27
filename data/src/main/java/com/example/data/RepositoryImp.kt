@@ -2,10 +2,8 @@ package com.example.data
 
 import com.example.domain.data_interfaces.Repository
 import com.example.domain.enums.EntityType
-import com.example.domain.enums.OfferType
 import com.example.domain.models.*
 import com.example.domain.models.base.BaseEntity
-import com.example.domain.models.base.BaseOffer
 import kotlin.random.Random
 
 class RepositoryImp : Repository {
@@ -275,14 +273,10 @@ class RepositoryImp : Repository {
             EntityType.BUY_MORE -> getBuyMoreModels() as MutableList<BaseEntity>
             EntityType.EXPLORE_MORE -> getExploreMoreModels() as MutableList<BaseEntity>
             EntityType.ITEM -> getItems()
-            else -> getSavesCornerModels() as MutableList<BaseEntity>
+            EntityType.SAVES_CORNER -> getSavesCornerModels() as MutableList<BaseEntity>
+            EntityType.BEST_OFFERS -> getBestOfferModels() as MutableList<BaseEntity>
+            EntityType.TODAY_OFFER -> getTodayOfferModels() as MutableList<BaseEntity>
         }
     }
 
-    override suspend fun getOffers(offerType: OfferType): MutableList<BaseOffer> {
-        return when (offerType) {
-            OfferType.TODAY_OFFER -> getTodayOfferModels() as MutableList<BaseOffer>
-            OfferType.BEST_OFFERS -> getBestOfferModels() as MutableList<BaseOffer>
-        }
-    }
 }
