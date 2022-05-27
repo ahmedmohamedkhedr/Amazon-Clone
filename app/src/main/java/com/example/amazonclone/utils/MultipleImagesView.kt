@@ -2,9 +2,11 @@ package com.example.amazonclone.utils
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.lifecycle.findViewTreeLifecycleOwner
-import androidx.lifecycle.lifecycleScope
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import com.example.amazonclone.R
 import kotlinx.coroutines.*
+
 
 class MultipleImagesView(context: Context, attributes: AttributeSet) :
     androidx.appcompat.widget.AppCompatImageView(context, attributes) {
@@ -23,6 +25,7 @@ class MultipleImagesView(context: Context, attributes: AttributeSet) :
         GlobalScope.launch(dispatcher) {
             while (true) {
                 GlobalScope.launch(Dispatchers.Main) {
+                    animateTransition()
                     imagesUrls?.let {
                         loadImage(it[index])
                     }
@@ -37,6 +40,24 @@ class MultipleImagesView(context: Context, attributes: AttributeSet) :
                 }
             }
         }
+    }
+
+    private fun animateTransition() {
+        val animFadeOut: Animation = AnimationUtils.loadAnimation(
+            context,
+            R.anim.fadeout
+        )
+
+        val animFadeIn: Animation =
+            AnimationUtils.loadAnimation(context, R.anim.fadein)
+
+        animFadeOut.reset()
+        clearAnimation()
+        startAnimation(animFadeOut)
+
+        animFadeIn.reset()
+        clearAnimation()
+        startAnimation(animFadeIn)
     }
 
     override fun onDetachedFromWindow() {
