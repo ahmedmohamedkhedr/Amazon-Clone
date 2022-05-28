@@ -9,9 +9,10 @@ import kotlinx.coroutines.*
 
 
 class MultipleImagesView(context: Context, attributes: AttributeSet) :
-    androidx.appcompat.widget.AppCompatImageView(context, attributes) {
+    androidx.appcompat.widget.AppCompatImageView(context, attributes),
+    CoroutineScope by CoroutineScope(Dispatchers.Main) {
+
     var job = Job()
-    val dispatcher = Dispatchers.IO + job
 
     var imagesUrls: MutableList<String>? = null
     var index = 0
@@ -22,9 +23,9 @@ class MultipleImagesView(context: Context, attributes: AttributeSet) :
     }
 
     private fun setup() {
-        GlobalScope.launch(dispatcher) {
+        launch(Dispatchers.IO + job) {
             while (true) {
-                GlobalScope.launch(Dispatchers.Main) {
+                launch(Dispatchers.Main + job) {
                     animateTransition()
                     imagesUrls?.let {
                         loadImage(it[index])
@@ -41,6 +42,7 @@ class MultipleImagesView(context: Context, attributes: AttributeSet) :
             }
         }
     }
+
 
     private fun animateTransition() {
         val animFadeOut: Animation = AnimationUtils.loadAnimation(

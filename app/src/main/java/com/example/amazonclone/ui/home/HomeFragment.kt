@@ -46,11 +46,13 @@ class HomeFragment : Fragment() {
         viewModel._bestOffersLiveData.observe(viewLifecycleOwner) {
             adapter.addEntities(it as MutableList<BaseEntity>)
         }
+
         viewModel._buyMoreLiveDate.observe(viewLifecycleOwner) {
-
+            adapter.addEntities(mutableListOf(it))
         }
-        viewModel._exploreMoreLiveDate.observe(viewLifecycleOwner) {
 
+        viewModel._exploreMoreLiveDate.observe(viewLifecycleOwner) {
+            adapter.addEntities(it as MutableList<BaseEntity>)
         }
 
         viewModel._itemsLiveDate.observe(viewLifecycleOwner) {
@@ -65,8 +67,8 @@ class HomeFragment : Fragment() {
             adapter.addEntities(it as MutableList<BaseEntity>)
         }
 
-        viewModel._errorLiveDate.observe(viewLifecycleOwner){
-            Toast.makeText(requireContext(),it,Toast.LENGTH_SHORT).show()
+        viewModel._errorLiveDate.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         }
 
     }

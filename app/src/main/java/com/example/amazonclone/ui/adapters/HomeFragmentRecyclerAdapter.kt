@@ -8,10 +8,7 @@ import com.example.amazonclone.databinding.*
 import com.example.amazonclone.utils.EntityWrapper
 import com.example.amazonclone.utils.loadImage
 import com.example.domain.enums.EntityType
-import com.example.domain.models.BestOfferModel
-import com.example.domain.models.CategoryModel
-import com.example.domain.models.SavesCornerModel
-import com.example.domain.models.TodayOfferModel
+import com.example.domain.models.*
 import com.example.domain.models.base.BaseEntity
 
 class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -69,6 +66,26 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
                     )
                 )
             }
+
+            EntityType.BUY_MORE.value -> {
+                BuyMoreViewHolder(
+                    BuyMoreViewHolderBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
+            }
+
+            EntityType.EXPLORE_MORE.value -> {
+                ExploreMoreViewHolder(
+                    ExploreMoreViewHolderBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
+            }
             else -> throw IllegalArgumentException()
         }
 
@@ -82,6 +99,8 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
             is TodayOffersViewHolder -> holder.bind(data[position].data as MutableList<TodayOfferModel>)
             is SavesCornerViewHolder -> holder.bind(data[position].data as MutableList<SavesCornerModel>)
             is ItemsViewHolder -> holder.bind(data[position].data)
+            is BuyMoreViewHolder -> holder.bind(data[position].data.first() as BuyMoreModel)
+            is ExploreMoreViewHolder -> holder.bind(data[position].data.first() as ExploreMoreModel)
         }
     }
 
@@ -135,6 +154,24 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
 
         fun bind(data: MutableList<BaseEntity>) = with(viewBinding) {
             itemsRV.adapter = ItemAdapter().also { it.addItems(data) }
+        }
+    }
+
+    inner class BuyMoreViewHolder(private val viewBinding: BuyMoreViewHolderBinding) :
+        RecyclerView.ViewHolder(viewBinding.root) {
+
+        fun bind(item: BuyMoreModel) = with(viewBinding) {
+            title.text = item.title
+            itemsRV.adapter = BuyMoreAdapter().also { it.addItems(item.products) }
+        }
+    }
+
+    inner class ExploreMoreViewHolder(private val viewBinding: ExploreMoreViewHolderBinding) :
+        RecyclerView.ViewHolder(viewBinding.root) {
+
+        fun bind(item: ExploreMoreModel) = with(viewBinding) {
+            title.text = item.title
+            itemsRV.adapter = ExploreMoreAdapter().also { it.addItems(item.productsThumbnail) }
         }
     }
 }

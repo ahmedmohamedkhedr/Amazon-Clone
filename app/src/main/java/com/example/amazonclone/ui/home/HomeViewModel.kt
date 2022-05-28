@@ -30,9 +30,9 @@ class HomeViewModel(private val interactor: HomeInteractor) : ViewModel() {
         MutableLiveData()
     val _itemsLiveDate: LiveData<MutableList<BaseEntity>> = itemsLiveDate
 
-    private val buyMoreLiveDate: MutableLiveData<MutableList<BuyMoreModel>> =
+    private val buyMoreLiveDate: MutableLiveData<BuyMoreModel> =
         MutableLiveData()
-    val _buyMoreLiveDate: LiveData<MutableList<BuyMoreModel>> = buyMoreLiveDate
+    val _buyMoreLiveDate: LiveData<BuyMoreModel> = buyMoreLiveDate
 
     private val exploreMoreLiveDate: MutableLiveData<MutableList<ExploreMoreModel>> =
         MutableLiveData()
