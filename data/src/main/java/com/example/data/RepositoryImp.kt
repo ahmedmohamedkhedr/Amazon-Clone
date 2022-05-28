@@ -306,4 +306,15 @@ class RepositoryImp : Repository {
         }
     }
 
+    override suspend fun getProduct(id: String): ProductModel {
+        return ProductModel(
+            id = id,
+            1400.0,
+            10,
+            1300.0,
+            "لاب ديل 16 GB RAM كور i5 500 GB هارد يعمل بكفاءه عاليه",
+            "https://m.media-amazon.com/images/I/41Yu-QbGZqL._AC_SY780_.jpg"
+        )
+    }
+
 }

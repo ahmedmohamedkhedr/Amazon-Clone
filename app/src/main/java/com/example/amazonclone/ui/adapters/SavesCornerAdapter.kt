@@ -8,11 +8,19 @@ import com.example.amazonclone.databinding.SavesCornerItemLayoutBinding
 import com.example.amazonclone.utils.loadImage
 import com.example.domain.models.SavesCornerModel
 
-class SavesCornerAdapter : RecyclerView.Adapter<SavesCornerAdapter.ViewHolder>() {
+class SavesCornerAdapter(private val listener: AdapterListener) :
+    RecyclerView.Adapter<SavesCornerAdapter.ViewHolder>() {
     private val data = mutableListOf<SavesCornerModel>()
 
     inner class ViewHolder(private val viewBinding: SavesCornerItemLayoutBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
+
+        init {
+            viewBinding.root.setOnClickListener {
+                listener.onClick(data[adapterPosition].id)
+            }
+        }
+
         fun bind(item: SavesCornerModel) = with(viewBinding) {
             title.text = item.title
             thumbnail.loadImage(item.thumbnail)

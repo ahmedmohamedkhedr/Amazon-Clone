@@ -9,11 +9,19 @@ import com.example.amazonclone.databinding.ExploreMoreItemBinding
 import com.example.amazonclone.utils.loadImage
 import com.example.domain.models.BuyMoreModel
 
-class ExploreMoreAdapter : RecyclerView.Adapter<ExploreMoreAdapter.ViewHolder>() {
+class ExploreMoreAdapter(private val listener: AdapterListener) :
+    RecyclerView.Adapter<ExploreMoreAdapter.ViewHolder>() {
     private val data: MutableList<String> = mutableListOf()
 
     inner class ViewHolder(private val viewBinding: ExploreMoreItemBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
+
+        init {
+            viewBinding.root.setOnClickListener {
+                listener.onClick("")
+            }
+        }
+
         fun bind(item: String) = with(viewBinding) {
             thumbnail.loadImage(item)
         }
@@ -36,7 +44,7 @@ class ExploreMoreAdapter : RecyclerView.Adapter<ExploreMoreAdapter.ViewHolder>()
     override fun getItemCount(): Int = data.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addItems(data:MutableList<String>){
+    fun addItems(data: MutableList<String>) {
         this.data.addAll(data)
         notifyDataSetChanged()
     }

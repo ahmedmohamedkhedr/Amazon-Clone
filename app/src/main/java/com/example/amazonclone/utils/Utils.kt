@@ -6,6 +6,8 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.squareup.picasso.Picasso
 
 fun setStatusBarColor(activity: Activity, bgColor: Int, textDark: Boolean = false) {

@@ -13,16 +13,30 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/bg_rec_white_color_black_stroke"
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:padding="4dp"
         android:text="@string/search_on_amazon_eg"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="UseCompatTextViewDrawableXml" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#A8DAD5"
+        android:drawableStart="@drawable/ic_location"
+        android:drawablePadding="5dp"
+        android:padding="8dp"
+        android:text="@string/choose_location"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="UseCompatTextViewDrawableXml" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

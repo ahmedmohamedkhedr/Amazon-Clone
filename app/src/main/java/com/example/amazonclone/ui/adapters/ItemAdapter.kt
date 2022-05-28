@@ -10,7 +10,8 @@ import com.example.amazonclone.utils.loadImage
 import com.example.domain.enums.EntityType
 import com.example.domain.models.base.BaseEntity
 
-class ItemAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ItemAdapter(private val listener: AdapterListener) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     val data: MutableList<BaseEntity> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -50,6 +51,13 @@ class ItemAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class ItemViewHolder(private val viewBinding: ItemLayoutBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
+
+        init {
+            viewBinding.root.setOnClickListener {
+                listener.onClick(data[adapterPosition].id)
+            }
+        }
+
         fun bind(item: BaseEntity) = with(viewBinding) {
             title.text = item.title
             thumbnail.loadImage(item.thumbnail)

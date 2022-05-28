@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainContainer"
     tools:context=".ui.MainActivity">
 
     <androidx.viewpager2.widget.ViewPager2
@@ -13,7 +14,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tabsContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
     </androidx.viewpager2.widget.ViewPager2>
 
@@ -21,32 +22,32 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/color_gray_stroke"
         app:layout_constraintBottom_toTopOf="@id/tabsContainer"
-        android:background="@color/color_gray_stroke"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <FrameLayout
         android:id="@+id/tabsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/white">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabGravity="fill"
             android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:background="@android:color/transparent"
+            app:tabGravity="fill"
             app:tabIndicator="@drawable/tab_indicator"
             app:tabIndicatorGravity="top"
-            app:tabIndicatorHeight="4dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp">
+            app:tabIndicatorHeight="4dp">
 
         </com.google.android.material.tabs.TabLayout>
 

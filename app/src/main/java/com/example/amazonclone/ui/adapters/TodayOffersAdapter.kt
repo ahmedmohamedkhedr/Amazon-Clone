@@ -11,11 +11,19 @@ import com.example.amazonclone.utils.loadImage
 import com.example.domain.models.BestOfferModel
 import com.example.domain.models.TodayOfferModel
 
-class TodayOffersAdapter : RecyclerView.Adapter<TodayOffersAdapter.ViewHolder>() {
+class TodayOffersAdapter(private val listener: AdapterListener) :
+    RecyclerView.Adapter<TodayOffersAdapter.ViewHolder>() {
     private val data = mutableListOf<TodayOfferModel>()
 
     inner class ViewHolder(private val viewBinding: TodayOfferItemLayoutBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
+
+        init {
+            viewBinding.root.setOnClickListener {
+                listener.onClick(data[adapterPosition].id)
+            }
+        }
+
         @SuppressLint("SetTextI18n")
         fun bind(item: TodayOfferModel) = with(viewBinding) {
             title.text = item.title

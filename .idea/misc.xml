@@ -18,10 +18,14 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/categories_view_holder.xml" value="0.1676975945017182" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/explore_more_item.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/explore_more_view_holder.xml" value="0.16944444444444445" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/fragment_home.xml" value="0.152" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/fragment_product_details.xml" value="0.176" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/item_layout.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/item_view_holder.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/main_toolbar.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/offer_product_to_sell.xml" value="0.16944444444444445" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/product_details.xml" value="0.16944444444444445" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/product_payment_details.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/saves_corner_item_layout.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/saves_corner_view_holder.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AmazonClone/app/src/main/res/layout/today_offer_item_layout.xml" value="0.264" />

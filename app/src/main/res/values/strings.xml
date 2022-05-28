@@ -6,10 +6,21 @@
     <string name="choose_location">Choose Location</string>
     <string name="today_offers">عروض اليوم</string>
     <string name="more_offers">المزيد من العروض</string>
-    <string name="best_offer">افضل عرض</string>
+    <string name="best_offer">افضل عرض:</string>
     <string name="discount_to">خصم يصل الي</string>
     <string name="egp">جنية</string>
     <string name="saves_corner">ركن التوفير</string>
     <string name="buy_more">تسوق المزيد</string>
     <string name="explore_more">استكشف المزيد</string>
+    <string name="brand_amazon">العلامة التجارية: أمازون</string>
+    <string name="_29_3">توصيل مجاني غدا، مايو 29. قم بالطلب خلال 3 ساعات</string>
+    <string name="add_to_cart">اضف الي العربة</string>
+    <string name="buy_now">شراء الان</string>
+    <string name="amazon_eg">يشحن من Amazon.eg</string>
+    <string name="amazon_eg_">يباع من Amazon.eg</string>
+    <string name="add_to_list">اضف الي القائمة</string>
+    <string name="offer_to_be_sell">اعرضه للبيع</string>
+    <string name="should_know">نريدك ان تعرف</string>
+    <string name="amazon_amazon_us">استخدم بيانات حسابك المسجل علي Amazon لاعداد قارئات الالكترونيه ةالقيام بجميع عمليات الشراء علي Amazon US</string>
+    <string name="sell_price">سعر البيع: </string>
 </resources>

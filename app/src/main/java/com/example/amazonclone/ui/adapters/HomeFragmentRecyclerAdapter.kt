@@ -11,7 +11,8 @@ import com.example.domain.enums.EntityType
 import com.example.domain.models.*
 import com.example.domain.models.base.BaseEntity
 
-class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class HomeFragmentRecyclerAdapter(private val listener: AdapterListener) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val data: MutableList<EntityWrapper> = mutableListOf()
 
@@ -129,7 +130,7 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
             val banners = data.map { it.banner }.toMutableList()
             multipleImagesView.setImageUrls(banners)
             imageView.loadImage(banners.first())
-            offersRV.adapter = BestOffersAdapter().also { it.addOffers(data) }
+            offersRV.adapter = BestOffersAdapter(listener).also { it.addOffers(data) }
         }
     }
 
@@ -137,7 +138,7 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
         RecyclerView.ViewHolder(viewBinding.root) {
 
         fun bind(data: MutableList<TodayOfferModel>) = with(viewBinding) {
-            offersRV.adapter = TodayOffersAdapter().also { it.addOffers(data) }
+            offersRV.adapter = TodayOffersAdapter(listener).also { it.addOffers(data) }
         }
     }
 
@@ -145,7 +146,7 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
         RecyclerView.ViewHolder(viewBinding.root) {
 
         fun bind(data: MutableList<SavesCornerModel>) = with(viewBinding) {
-            itemsRV.adapter = SavesCornerAdapter().also { it.addItems(data) }
+            itemsRV.adapter = SavesCornerAdapter(listener).also { it.addItems(data) }
         }
     }
 
@@ -153,7 +154,7 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
         RecyclerView.ViewHolder(viewBinding.root) {
 
         fun bind(data: MutableList<BaseEntity>) = with(viewBinding) {
-            itemsRV.adapter = ItemAdapter().also { it.addItems(data) }
+            itemsRV.adapter = ItemAdapter(listener).also { it.addItems(data) }
         }
     }
 
@@ -162,7 +163,7 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
 
         fun bind(item: BuyMoreModel) = with(viewBinding) {
             title.text = item.title
-            itemsRV.adapter = BuyMoreAdapter().also { it.addItems(item.products) }
+            itemsRV.adapter = BuyMoreAdapter(listener).also { it.addItems(item.products) }
         }
     }
 
@@ -171,7 +172,7 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
 
         fun bind(item: ExploreMoreModel) = with(viewBinding) {
             title.text = item.title
-            itemsRV.adapter = ExploreMoreAdapter().also { it.addItems(item.productsThumbnail) }
+            itemsRV.adapter = ExploreMoreAdapter(listener).also { it.addItems(item.productsThumbnail) }
         }
     }
 }

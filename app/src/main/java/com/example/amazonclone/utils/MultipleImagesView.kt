@@ -12,10 +12,10 @@ class MultipleImagesView(context: Context, attributes: AttributeSet) :
     androidx.appcompat.widget.AppCompatImageView(context, attributes),
     CoroutineScope by CoroutineScope(Dispatchers.Main) {
 
-    var job = Job()
+    private var job = Job()
 
-    var imagesUrls: MutableList<String>? = null
-    var index = 0
+    private var imagesUrls: MutableList<String>? = null
+    private var index = 0
 
     fun setImageUrls(urls: MutableList<String>) {
         this.imagesUrls = urls

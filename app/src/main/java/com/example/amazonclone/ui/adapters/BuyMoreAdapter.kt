@@ -8,11 +8,19 @@ import com.example.amazonclone.databinding.BuyMoreItemBinding
 import com.example.amazonclone.utils.loadImage
 import com.example.domain.models.BuyMoreModel
 
-class BuyMoreAdapter : RecyclerView.Adapter<BuyMoreAdapter.ViewHolder>() {
+class BuyMoreAdapter(private val listener: AdapterListener) :
+    RecyclerView.Adapter<BuyMoreAdapter.ViewHolder>() {
     private val data: MutableList<BuyMoreModel.Product> = mutableListOf()
 
     inner class ViewHolder(private val viewBinding: BuyMoreItemBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
+
+        init {
+            viewBinding.root.setOnClickListener {
+                listener.onClick(data[adapterPosition].id)
+            }
+        }
+
         fun bind(item: BuyMoreModel.Product) = with(viewBinding) {
             name.text = item.name
             thumbnail.loadImage(item.thumbnail)
@@ -36,7 +44,7 @@ class BuyMoreAdapter : RecyclerView.Adapter<BuyMoreAdapter.ViewHolder>() {
     override fun getItemCount(): Int = data.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addItems(data:MutableList<BuyMoreModel.Product>){
+    fun addItems(data: MutableList<BuyMoreModel.Product>) {
         this.data.addAll(data)
         notifyDataSetChanged()
     }

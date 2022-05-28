@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.amazonclone.databinding.FragmentHomeBinding
+import com.example.amazonclone.ui.adapters.AdapterListener
 import com.example.amazonclone.ui.adapters.HomeFragmentRecyclerAdapter
+import com.example.amazonclone.ui.product.ProductDetailsActivity
 import com.example.domain.models.base.BaseEntity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -17,7 +19,11 @@ class HomeFragment : Fragment() {
     private val viewModel by viewModel<HomeViewModel>()
 
     private val adapter: HomeFragmentRecyclerAdapter by lazy {
-        HomeFragmentRecyclerAdapter()
+        HomeFragmentRecyclerAdapter(object : AdapterListener {
+            override fun onClick(id: String) {
+                ProductDetailsActivity.start(requireContext(), id)
+            }
+        })
     }
 
     override fun onCreateView(

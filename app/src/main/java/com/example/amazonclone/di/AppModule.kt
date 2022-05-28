@@ -2,6 +2,7 @@ package com.example.amazonclone.di
 
 import com.example.amazonclone.interactors.HomeInteractor
 import com.example.amazonclone.ui.home.HomeViewModel
+import com.example.amazonclone.ui.product.ProductDetailsViewModel
 import com.example.data.RepositoryImp
 import com.example.domain.data_interfaces.Repository
 import com.example.domain.use_cases.*
@@ -42,11 +43,21 @@ val appModule = module {
         GetExploreMoreUseCase(get())
     }
 
+    single<GetProductUseCase> {
+        GetProductUseCase(get())
+    }
+
     single<HomeInteractor> {
         HomeInteractor(get(), get(), get(), get(), get(), get(), get())
     }
 
+
+
     viewModel {
         HomeViewModel(get())
+    }
+
+    viewModel {
+        ProductDetailsViewModel(get())
     }
 }
