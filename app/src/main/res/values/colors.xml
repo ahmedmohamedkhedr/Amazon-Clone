@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_gray_stroke">#B8B2B2</color>
     <color name="colorGrayLight">#BBC0C1</color>
+    <color name="colorBlue">#027685</color>
+    <color name="color_red">#E30953</color>
 </resources>

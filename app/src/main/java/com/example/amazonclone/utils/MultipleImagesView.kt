@@ -10,7 +10,7 @@ import kotlinx.coroutines.*
 
 class MultipleImagesView(context: Context, attributes: AttributeSet) :
     androidx.appcompat.widget.AppCompatImageView(context, attributes) {
-    val job = Job()
+    var job = Job()
     val dispatcher = Dispatchers.IO + job
 
     var imagesUrls: MutableList<String>? = null
@@ -31,7 +31,7 @@ class MultipleImagesView(context: Context, attributes: AttributeSet) :
                     }
                 }
 
-                delay(4000)
+                delay(5000)
 
                 if (index < imagesUrls?.lastIndex ?: 0) {
                     ++index
@@ -63,5 +63,10 @@ class MultipleImagesView(context: Context, attributes: AttributeSet) :
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         job.cancel()
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        job = Job()
     }
 }

@@ -37,6 +37,60 @@ class RepositoryImp : Repository {
             CategoryModel(
                 thumbnail = "https://small-projects.org/wp-content/uploads/2016/02/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%85%D8%B1%D8%A8%D8%AD.jpg",
                 title = "السوبر ماركت"
+            ), CategoryModel(
+                thumbnail = "https://5.imimg.com/data5/RC/FX/MY-4573598/customized-personal-care-products-500x500.jpg",
+                title = "عروض اليوم"
+            ),
+            CategoryModel(
+                thumbnail = "https://www.adderah.com/image/cache/catalog/blog/copuons/discount-copuon-350x350.png",
+                title = "كوبونات خصم"
+            ),
+            CategoryModel(
+                thumbnail = "https://m.media-amazon.com/images/I/31YNfi8EsAL._AC_SY780_.jpg",
+                title = "المطبخ"
+            ),
+            CategoryModel(
+                thumbnail = "https://mobileegy.com/wp-content/uploads/2021/12/%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1-%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84%D8%A7%D8%AA-%D9%81%D9%8A%D9%81%D9%88-2022-1024x868.jpg",
+                title = "الموبايلات"
+            ),
+            CategoryModel(
+                thumbnail = "https://cdn.shopify.com/s/files/1/0214/2080/2112/products/jromy-shambo-lnmo-alshaar-watermans-grow-me-shampoo-378775.jpg?v=1643547399",
+                title = "الجمال"
+            ),
+            CategoryModel(
+                thumbnail = "https://www.n-3rab.com/wp-content/uploads/2018/09/%D8%A7%D9%84%D9%83%D9%85%D8%A8%D9%8A%D9%88%D8%AA%D8%B1.jpg",
+                title = "الكمبيوتر"
+            ),
+            CategoryModel(
+                thumbnail = "https://small-projects.org/wp-content/uploads/2016/02/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%85%D8%B1%D8%A8%D8%AD.jpg",
+                title = "السوبر ماركت"
+            ), CategoryModel(
+                thumbnail = "https://5.imimg.com/data5/RC/FX/MY-4573598/customized-personal-care-products-500x500.jpg",
+                title = "عروض اليوم"
+            ),
+            CategoryModel(
+                thumbnail = "https://www.adderah.com/image/cache/catalog/blog/copuons/discount-copuon-350x350.png",
+                title = "كوبونات خصم"
+            ),
+            CategoryModel(
+                thumbnail = "https://m.media-amazon.com/images/I/31YNfi8EsAL._AC_SY780_.jpg",
+                title = "المطبخ"
+            ),
+            CategoryModel(
+                thumbnail = "https://mobileegy.com/wp-content/uploads/2021/12/%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1-%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84%D8%A7%D8%AA-%D9%81%D9%8A%D9%81%D9%88-2022-1024x868.jpg",
+                title = "الموبايلات"
+            ),
+            CategoryModel(
+                thumbnail = "https://cdn.shopify.com/s/files/1/0214/2080/2112/products/jromy-shambo-lnmo-alshaar-watermans-grow-me-shampoo-378775.jpg?v=1643547399",
+                title = "الجمال"
+            ),
+            CategoryModel(
+                thumbnail = "https://www.n-3rab.com/wp-content/uploads/2018/09/%D8%A7%D9%84%D9%83%D9%85%D8%A8%D9%8A%D9%88%D8%AA%D8%B1.jpg",
+                title = "الكمبيوتر"
+            ),
+            CategoryModel(
+                thumbnail = "https://small-projects.org/wp-content/uploads/2016/02/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%85%D8%B1%D8%A8%D8%AD.jpg",
+                title = "السوبر ماركت"
             )
         )
     }
@@ -44,11 +98,11 @@ class RepositoryImp : Repository {
 
     val thumbnails =
         mutableListOf(
-            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Frunelaenen%2Fshopware6-advanced-banners&psig=AOvVaw3c-ytamHMM5gbNtXE3e2o-&ust=1653657578713000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIif2u-g_fcCFQAAAAAdAAAAABAF",
-            "https://www.loy.info/cms/cache/shopware-5-6-template-_600x200.jpg",
-            "https://img.freepik.com/free-vector/seo-banner-work-content-site-its-indexing-search-engines_80328-120.jpg?w=2000",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFMr8Y3juMKeTtlbdmAjYiDuKnLzfmF8VwR0c6boxRRhs35C6AuvE1eWhmj6Xqm-nq3fQ&usqp=CAU",
-            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fliveblogspot.com%2Fseo%2Foff-page-seo-strategies-build-online-reputation%2F&psig=AOvVaw3c-ytamHMM5gbNtXE3e2o-&ust=1653657578713000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIif2u-g_fcCFQAAAAAdAAAAABA6"
+            "https://www.bbl-tech.com/wp-content/uploads/2022/02/Outside-Banner.jpg",
+            "https://www.instantpromotion.co.uk/media/catalog/product/i/p/ip_pvc.jpg",
+            "https://designoffice.co.uk/wp-content/uploads/2019/06/outdoor.jpg",
+            "https://print4london.com/sites/default/files/uploaded/PVC%20banner%201st.jpg",
+            "https://print.allinglobaltrade.com/wp-content/uploads/2021/07/Free-Billboard-Banner-Mockup-02-removebg-preview.png",
         )
 
 
@@ -144,36 +198,35 @@ class RepositoryImp : Repository {
     private fun getSavesCornerModels(): MutableList<SavesCornerModel> {
         return mutableListOf(
             SavesCornerModel(
-                thumbnail = "https://5.imimg.com/data5/RC/FX/MY-4573598/customized-personal-care-products-500x500.jpg",
+                thumbnail = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0xFOgLfvTWfejmGwE3pJHzHj6Kx8gEKdXw&usqp=CAU",
                 title = "عروض اليوم"
             ),
             SavesCornerModel(
-                thumbnail = "https://www.adderah.com/image/cache/catalog/blog/copuons/discount-copuon-350x350.png",
+                thumbnail = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0xFOgLfvTWfejmGwE3pJHzHj6Kx8gEKdXw&usqp=CAU",
                 title = "كوبونات خصم"
             ),
             SavesCornerModel(
-                thumbnail = "https://m.media-amazon.com/images/I/31YNfi8EsAL._AC_SY780_.jpg",
+                thumbnail = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0xFOgLfvTWfejmGwE3pJHzHj6Kx8gEKdXw&usqp=CAU",
                 title = "المطبخ"
             ),
             SavesCornerModel(
-                thumbnail = "https://mobileegy.com/wp-content/uploads/2021/12/%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1-%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84%D8%A7%D8%AA-%D9%81%D9%8A%D9%81%D9%88-2022-1024x868.jpg",
+                thumbnail = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0xFOgLfvTWfejmGwE3pJHzHj6Kx8gEKdXw&usqp=CAU",
                 title = "الموبايلات"
             ),
             SavesCornerModel(
-                thumbnail = "https://cdn.shopify.com/s/files/1/0214/2080/2112/products/jromy-shambo-lnmo-alshaar-watermans-grow-me-shampoo-378775.jpg?v=1643547399",
+                thumbnail = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0xFOgLfvTWfejmGwE3pJHzHj6Kx8gEKdXw&usqp=CAU",
                 title = "الجمال"
             )
         )
     }
 
     private fun getItems(): MutableList<BaseEntity> {
-
         return mutableListOf(
             ItemModel(
                 thumbnail = "https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/wp-cms/uploads/2022/03/p-1-most-innovative-products-2022-90731853.jpg",
                 title = "خصم اضافي 30% علي براندات مختاره"
             ),
-            ItemModel(thumbnail = thumbnails[Random.nextInt(0, 4)], title = ""),
+            BannerModel(thumbnail = thumbnails[Random.nextInt(0, 4)]),
             ItemModel(
                 thumbnail = "https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/wp-cms/uploads/2022/03/p-1-most-innovative-products-2022-90731853.jpg",
                 title = "خصم اضافي 30% علي براندات مختاره"
@@ -186,7 +239,7 @@ class RepositoryImp : Repository {
                 thumbnail = "https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/wp-cms/uploads/2022/03/p-1-most-innovative-products-2022-90731853.jpg",
                 title = "خصم اضافي 30% علي براندات مختاره"
             ),
-            ItemModel(thumbnail = thumbnails[Random.nextInt(0, 4)], title = ""),
+            BannerModel(thumbnail = thumbnails[Random.nextInt(0, 4)]),
             ItemModel(
                 thumbnail = "https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/wp-cms/uploads/2022/03/p-1-most-innovative-products-2022-90731853.jpg",
                 title = "خصم اضافي 30% علي براندات مختاره"
@@ -195,7 +248,7 @@ class RepositoryImp : Repository {
                 thumbnail = "https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/wp-cms/uploads/2022/03/p-1-most-innovative-products-2022-90731853.jpg",
                 title = "خصم اضافي 30% علي براندات مختاره"
             ),
-            ItemModel(thumbnail = thumbnails[Random.nextInt(0, 4)], title = ""),
+            BannerModel(thumbnail = thumbnails[Random.nextInt(0, 4)]),
         )
     }
 
@@ -272,10 +325,10 @@ class RepositoryImp : Repository {
             EntityType.CATEGORIES -> getCategories() as MutableList<BaseEntity>
             EntityType.BUY_MORE -> getBuyMoreModels() as MutableList<BaseEntity>
             EntityType.EXPLORE_MORE -> getExploreMoreModels() as MutableList<BaseEntity>
-            EntityType.ITEM -> getItems()
             EntityType.SAVES_CORNER -> getSavesCornerModels() as MutableList<BaseEntity>
             EntityType.BEST_OFFERS -> getBestOfferModels() as MutableList<BaseEntity>
             EntityType.TODAY_OFFER -> getTodayOfferModels() as MutableList<BaseEntity>
+            else -> getItems()
         }
     }
 

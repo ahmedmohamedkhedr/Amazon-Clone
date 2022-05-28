@@ -4,13 +4,14 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.amazonclone.databinding.BestOffersViewHolderBinding
-import com.example.amazonclone.databinding.CategoriesViewHolderBinding
+import com.example.amazonclone.databinding.*
 import com.example.amazonclone.utils.EntityWrapper
 import com.example.amazonclone.utils.loadImage
 import com.example.domain.enums.EntityType
 import com.example.domain.models.BestOfferModel
 import com.example.domain.models.CategoryModel
+import com.example.domain.models.SavesCornerModel
+import com.example.domain.models.TodayOfferModel
 import com.example.domain.models.base.BaseEntity
 
 class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -38,6 +39,36 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
                     )
                 )
             }
+
+            EntityType.TODAY_OFFER.value -> {
+                TodayOffersViewHolder(
+                    TodayOfferViewHolderBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
+            }
+
+            EntityType.SAVES_CORNER.value -> {
+                SavesCornerViewHolder(
+                    SavesCornerViewHolderBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
+            }
+
+            EntityType.ITEM.value, EntityType.BANNER.value -> {
+                ItemsViewHolder(
+                    ItemViewHolderBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
+            }
             else -> throw IllegalArgumentException()
         }
 
@@ -48,6 +79,9 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
         when (holder) {
             is CategoriesViewHolder -> holder.bind(data[position].data as MutableList<CategoryModel>)
             is BestOffersViewHolder -> holder.bind(data[position].data as MutableList<BestOfferModel>)
+            is TodayOffersViewHolder -> holder.bind(data[position].data as MutableList<TodayOfferModel>)
+            is SavesCornerViewHolder -> holder.bind(data[position].data as MutableList<SavesCornerModel>)
+            is ItemsViewHolder -> holder.bind(data[position].data)
         }
     }
 
@@ -65,12 +99,7 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
         RecyclerView.ViewHolder(viewBinding.root) {
 
         fun bind(data: MutableList<CategoryModel>) = with(viewBinding) {
-            if (categoriesRV.adapter == null) {
-                categoriesRV.adapter = CategoriesAdapter().also { it.addCategories(data) }
-            } else {
-                val adapter = categoriesRV.adapter as CategoriesAdapter
-                adapter.addCategories(data)
-            }
+            categoriesRV.adapter = CategoriesAdapter().also { it.addCategories(data) }
         }
     }
 
@@ -81,13 +110,31 @@ class HomeFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
             val banners = data.map { it.banner }.toMutableList()
             multipleImagesView.setImageUrls(banners)
             imageView.loadImage(banners.first())
+            offersRV.adapter = BestOffersAdapter().also { it.addOffers(data) }
+        }
+    }
 
-            if (offersRV.adapter == null) {
-                offersRV.adapter = BestOffersAdapter().also { it.addOffers(data) }
-            } else {
-                val adapter = offersRV.adapter as BestOffersAdapter
-                adapter.addOffers(data)
-            }
+    inner class TodayOffersViewHolder(private val viewBinding: TodayOfferViewHolderBinding) :
+        RecyclerView.ViewHolder(viewBinding.root) {
+
+        fun bind(data: MutableList<TodayOfferModel>) = with(viewBinding) {
+            offersRV.adapter = TodayOffersAdapter().also { it.addOffers(data) }
+        }
+    }
+
+    inner class SavesCornerViewHolder(private val viewBinding: SavesCornerViewHolderBinding) :
+        RecyclerView.ViewHolder(viewBinding.root) {
+
+        fun bind(data: MutableList<SavesCornerModel>) = with(viewBinding) {
+            itemsRV.adapter = SavesCornerAdapter().also { it.addItems(data) }
+        }
+    }
+
+    inner class ItemsViewHolder(private val viewBinding: ItemViewHolderBinding) :
+        RecyclerView.ViewHolder(viewBinding.root) {
+
+        fun bind(data: MutableList<BaseEntity>) = with(viewBinding) {
+            itemsRV.adapter = ItemAdapter().also { it.addItems(data) }
         }
     }
 }

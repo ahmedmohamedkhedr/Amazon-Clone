@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.amazonclone.interactors.HomeInteractor
 import com.example.domain.models.*
+import com.example.domain.models.base.BaseEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -25,9 +26,9 @@ class HomeViewModel(private val interactor: HomeInteractor) : ViewModel() {
         MutableLiveData()
     val _savesCornerLiveDate: LiveData<MutableList<SavesCornerModel>> = savesCornerLiveDate
 
-    private val itemsLiveDate: MutableLiveData<MutableList<ItemModel>> =
+    private val itemsLiveDate: MutableLiveData<MutableList<BaseEntity>> =
         MutableLiveData()
-    val _itemsLiveDate: LiveData<MutableList<ItemModel>> = itemsLiveDate
+    val _itemsLiveDate: LiveData<MutableList<BaseEntity>> = itemsLiveDate
 
     private val buyMoreLiveDate: MutableLiveData<MutableList<BuyMoreModel>> =
         MutableLiveData()
@@ -37,14 +38,22 @@ class HomeViewModel(private val interactor: HomeInteractor) : ViewModel() {
         MutableLiveData()
     val _exploreMoreLiveDate: LiveData<MutableList<ExploreMoreModel>> = exploreMoreLiveDate
 
+    private val errorLiveDate: MutableLiveData<String> =
+        MutableLiveData()
+    val _errorLiveDate: LiveData<String> = errorLiveDate
 
     fun getData() = viewModelScope.launch(Dispatchers.IO) {
-        categoriesLiveDate.postValue(interactor.getCategoriesUseCase())
-        bestOffersLiveDate.postValue(interactor.getBestOffersUseCase())
-        todayOffersLiveDate.postValue(interactor.getTodayOfferUseCase())
-        savesCornerLiveDate.postValue(interactor.getSavesCornerUseCase())
-        itemsLiveDate.postValue(interactor.getItemsUseCase())
-        buyMoreLiveDate.postValue(interactor.buyMoreUseCase())
-        exploreMoreLiveDate.postValue(interactor.exploreMoreUseCase())
+        try {
+            categoriesLiveDate.postValue(interactor.getCategoriesUseCase())
+            bestOffersLiveDate.postValue(interactor.getBestOffersUseCase())
+            todayOffersLiveDate.postValue(interactor.getTodayOfferUseCase())
+            savesCornerLiveDate.postValue(interactor.getSavesCornerUseCase())
+            itemsLiveDate.postValue(interactor.getItemsUseCase())
+            buyMoreLiveDate.postValue(interactor.buyMoreUseCase())
+            exploreMoreLiveDate.postValue(interactor.exploreMoreUseCase())
+        } catch (e: Exception) {
+            errorLiveDate.postValue(e.message)
+        }
+
     }
 }
